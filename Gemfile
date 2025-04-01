@@ -71,3 +71,7 @@ gem "faker", "~> 3.5"
 
 gem 'cssbundling-rails', '~> 1.1'
 gem "a9n", "~> 1.5"
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+

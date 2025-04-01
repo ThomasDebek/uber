@@ -67,3 +67,6 @@ end
 gem "devise", "~> 4.9"
 
 gem "faker", "~> 3.5"
+
+
+gem 'cssbundling-rails', '~> 1.1'

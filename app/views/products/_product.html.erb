@@ -7,4 +7,12 @@
     <strong class="block font-medium mb-1">Price:</strong>
     <%= product.price %>
   </div>
+
+  <div>
+    <strong>Image</strong>
+    <% if product.main_image.attached? %>
+      <%= image_tag product.main_image, style: "width: 300px" %>
+    <% end %>
+  </div>
+
 </div>

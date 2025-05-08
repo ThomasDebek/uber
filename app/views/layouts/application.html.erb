@@ -22,13 +22,12 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body class="bg-white">
-<div class="w-full min-h-[100vh] flex flex-col">
-  <%= render 'layouts/navbar_links' %>
-  <main class="container mx-auto mt-28 px-5 flex">
-    <%= render 'layouts/flash_messages' %>
-    <%= yield %>
-  </main>
-</div>
+<body>
+
+<%= render 'layouts/navbar_links' %>
+<%= render 'layouts/flash_messages' %>
+<%= yield %>
+
+
 </body>
 </html>

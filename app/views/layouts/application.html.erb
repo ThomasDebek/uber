@@ -24,11 +24,11 @@
 
 
 <body class="bg-indigo-500">
-
 <%= render 'layouts/navbar_links' %>
-<%= render 'layouts/flash_messages' %>
-<%= yield %>
+<div class="container mx-auto px-4">
 
-
+  <%= render 'layouts/flash_messages' %>
+  <%= yield %>
+</div>
 </body>
 </html>

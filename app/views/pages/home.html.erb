@@ -3,7 +3,7 @@
   <p class="text-lg mt-2">A ride sharing app built with Ruby on Rails and Hotwire</p>
 
   <% if current_customer %>
-    <%= link_to "New Ride", "#", class: "bg-blue-500 text-blue-50 p-2 rounded-lg" %>
+    <%= link_to "Request New Ride", new_ride_path, class: "bg-blue-500 text-blue-50 p-2 rounded-lg" %>
   <% else  %>
     <div class="flex items-center gap-4">
       <div class="flex items-center gap-4 mt-6">

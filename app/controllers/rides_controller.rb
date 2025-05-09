@@ -21,7 +21,7 @@ class RidesController < ApplicationController
 
   # POST /rides or /rides.json
   def create
-    @ride = Ride.new(ride_params)
+    @ride = current_customer.rides.new(ride_params)
 
     respond_to do |format|
       if @ride.save
@@ -65,6 +65,6 @@ class RidesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ride_params
-      params.expect(ride: [ :pickup_location, :dropoff_location, :customer_id ])
+      params.expect(ride: [ :pickup_location, :dropoff_location])
     end
 end

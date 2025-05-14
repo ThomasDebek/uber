@@ -65,6 +65,7 @@ class RidesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ride_params
-      params.expect(ride: [ :pickup_location, :dropoff_location])
+      params.expect(ride: [ :pickup_location, :dropoff_location, :status ])
     end
 end
+

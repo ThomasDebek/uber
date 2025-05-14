@@ -1,4 +1,10 @@
 class Ride < ApplicationRecord
   belongs_to :customer
-  enum status: [:pending, :in_progress, :completed, :cancelled]
+  belongs_to :driver, optional: true
+
+
+ 
+  enum :status, [:pending, :in_progress, :completed, :cancelled]
 end
+
+

@@ -5,4 +5,8 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :rides, dependent: :destroy
+
+  def active_ride
+    rides.where(status: :pending).last
+  end
 end

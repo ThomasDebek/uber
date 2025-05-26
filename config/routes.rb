@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "available_rides/index"
+  resources :available_rides, only: [:index]
   resources :rides
   devise_for :drivers
   devise_for :customers

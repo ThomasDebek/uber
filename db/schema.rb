@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_09_191221) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_26_135447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -80,7 +80,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_09_191221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.bigint "driver_id"
     t.index ["customer_id"], name: "index_rides_on_customer_id"
+    t.index ["driver_id"], name: "index_rides_on_driver_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,4 +100,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_09_191221) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "rides", "customers"
+  add_foreign_key "rides", "drivers"
 end

@@ -10,7 +10,7 @@
         <%= link_to "Request New Ride", new_ride_path, class: "bg-blue-500 text-blue-50 p-2 rounded-lg" %>
       <% end %>
     <% else %>
-<%= link_to "View Available Rides", "#", class: "bg-blue-500 text-blue-50 p-2 rounded-lg" %>
+<%= link_to "View Available Rides", available_rides_path , class: "bg-blue-500 text-blue-50 p-2 rounded-lg" %>
   <% end %>
     <% else  %>
   <div class="flex items-center gap-4">

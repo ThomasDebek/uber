@@ -1,0 +1,40 @@
+<header class="bg-black text-white">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo po lewej stronie -->
+    <div class="flex space-x-4">
+      <%= link_to "Home", root_path, id: "logo", class: "text-xl font-bold text-white hover:text-gray-300" %>
+      <%= link_to "Product", products_path, id: "logo", class: "text-xl font-bold text-white hover:text-gray-300" %>
+    </div>
+
+    <!-- Navbar Toggler (dla urządzeń mobilnych) -->
+    <button class="lg:hidden px-2 py-1 text-white hover:text-gray-300 focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links (po prawej stronie) -->
+    <div class="hidden lg:flex lg:ml-auto space-x-4" id="navbarNav">
+      <ul class="flex items-center space-x-4">
+        <!-- User info jeśli użytkownik jest zalogowany -->
+        <% if user_signed_in? %>
+          <li class="text-white">
+            Logged in as <strong><%= current_user.email %></strong>
+          </li>
+          <li>
+            <%= link_to 'Edit profile', edit_user_registration_path, class: "text-white hover:text-gray-300" %>
+          </li>
+          <li>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-white hover:text-gray-300", data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% else %>
+          <!-- Linki dla niezalogowanych użytkowników -->
+          <li>
+            <%= link_to "Sign up", new_user_registration_path, class: "text-white hover:text-gray-300" %>
+          </li>
+          <li>
+            <%= link_to "Login", new_user_session_path, class: "text-white hover:text-gray-300" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</header>

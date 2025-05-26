@@ -1,0 +1,20 @@
+<div id="<%= dom_id product %>" class="w-full sm:w-auto space-y-4">
+  <div>
+    <strong class="block font-medium mb-1 text-gray-700">Name:</strong>
+    <p class="text-gray-800"><%= product.name %></p>
+  </div>
+
+  <div>
+    <strong class="block font-medium mb-1 text-gray-700">Price:</strong>
+    <p class="text-gray-800"><%= product.price %></p>
+  </div>
+
+  <% if product.main_image.attached? %>
+    <div>
+      <strong class="block font-medium mb-1 text-gray-700">Image:</strong>
+      <figure class="w-full h-48 overflow-hidden rounded-md bg-gray-100">
+        <%= image_tag product.main_image, alt: product.name, class: "w-full h-full object-cover" %>
+      </figure>
+    </div>
+  <% end %>
+</div>

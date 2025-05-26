@@ -4,4 +4,13 @@ class Driver < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :rides, dependent: :destroy
+
+  def active_ride
+    rides.where(status: :in_progress).last
+  end
+
+
 end
+
+
+
